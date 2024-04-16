@@ -24,8 +24,11 @@ const Integrations = () => {
         )
         if (response.ok) {
           let data = await response.json()
-          data = data["items"].filter((item) => item.enabled)
-          setIntegrations(data)
+          if (data?.items) {
+            console.log(data)
+            data = data["items"].filter((item) => item.enabled)
+            setIntegrations(data)
+          }
         } else {
           console.error("Failed")
         }

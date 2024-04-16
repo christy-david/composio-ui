@@ -4,7 +4,6 @@
 /public/build/
 build/
 dist/
-/.env/
 
 # Ignore Node.js related files
 node_modules/

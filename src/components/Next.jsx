@@ -5,9 +5,31 @@ import { Context } from "../contexts/Context"
 
 const Next = ({ next }) => {
   const nextRef = useRef()
-  const { uiDispatch } = useContext(Context)
+  const { uiDispatch, dataState } = useContext(Context)
+
+  const validate = () => {
+    if (
+      nextRef.current.dataset.next === "integrations" &&
+      dataState.composio === ""
+    ) {
+      alert("Enter your Composio API key to proceed")
+      return false
+    }
+    if (
+      nextRef.current.dataset.next === "prompt" &&
+      (dataState.composio === "" || dataState.integration === "")
+    ) {
+      alert("Composio API key is empty or an integration is not selected")
+      return false
+    }
+
+    return true
+  }
 
   const loadNext = () => {
+    if (!validate()) {
+      return
+    }
     uiDispatch({
       type: nextRef.current.dataset.next,
       reference: nextRef.current,

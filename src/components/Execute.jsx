@@ -9,7 +9,24 @@ const Execute = () => {
   const [data, setData] = useState()
   const [fetching, setFetching] = useState(false)
 
+  const validate = () => {
+    if (
+      dataState.composio === "" ||
+      dataState.openai === "" ||
+      dataState.integration === "" ||
+      dataState.prompt === ""
+    ) {
+      alert("All fields are mandatory")
+      return false
+    }
+    return true
+  }
+
   const execute = async () => {
+    if (!validate()) {
+      return
+    }
+
     setFetching((prevState) => !prevState)
 
     try {
@@ -42,7 +59,9 @@ const Execute = () => {
         <>
           <Check />
           <Dashes />
-          <p>{JSON.stringify(data)}</p>
+          <p className='p-2 bg-blue-300/50 border border-blue-600 rounded'>
+            {JSON.stringify(data)}
+          </p>
         </>
       ) : (
         <button

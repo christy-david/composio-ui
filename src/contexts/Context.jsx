@@ -12,10 +12,10 @@ const initialUiState = {
 }
 
 const initialDataState = {
-  composio: "0tfsxay9cogcckwmsqp3uen",
+  composio: "",
   integration: "",
-  openai: "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",
-  prompt: "Star the repo Meta/React on GitHub",
+  openai: "",
+  prompt: "",
 }
 
 const Provider = ({ children }) => {
