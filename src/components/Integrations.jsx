@@ -25,7 +25,6 @@ const Integrations = () => {
         if (response.ok) {
           let data = await response.json()
           if (data?.items) {
-            console.log(data)
             data = data["items"].filter((item) => item.enabled)
             setIntegrations(data)
           }

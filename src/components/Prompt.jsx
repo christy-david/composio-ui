@@ -9,8 +9,8 @@ const Prompt = () => {
         className='outline-none border rounded border-black p-2 w-full'
         type='text'
         placeholder='Your OpenAI API key'
-        value={dataState.openai}
-        onChange={(e) => dataDispatch({ payload: { openai: e.target.value } })}
+        value={dataState.llm}
+        onChange={(e) => dataDispatch({ payload: { llm: e.target.value } })}
       />
 
       <div className='flex flex-col justify-center items-center'>

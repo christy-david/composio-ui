@@ -12,7 +12,7 @@ const Execute = () => {
   const validate = () => {
     if (
       dataState.composio === "" ||
-      dataState.openai === "" ||
+      dataState.llm === "" ||
       dataState.integration === "" ||
       dataState.prompt === ""
     ) {

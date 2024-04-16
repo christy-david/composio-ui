@@ -10,10 +10,14 @@ import Execute from "./components/Execute"
 const App = () => {
   const { uiState } = useContext(Context)
 
+  const execute = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <>
       <div className='p-10 flex flex-col justify-center items-center text-sm'>
-        <form className='w-96'>
+        <form onSubmit={execute} className='w-96'>
           {uiState.composio && (
             <>
               <Composio />

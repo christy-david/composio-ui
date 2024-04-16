@@ -14,7 +14,7 @@ const initialUiState = {
 const initialDataState = {
   composio: "",
   integration: "",
-  openai: "",
+  llm: "",
   prompt: "",
 }
 
